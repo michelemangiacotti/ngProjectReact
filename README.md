@@ -1,4 +1,4 @@
-# ReactProject
+# ReactRandomTodoListProject
 
 A simple todo list with react frontend and express backend for call a simple api
 
