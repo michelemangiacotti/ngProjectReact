@@ -1,6 +1,6 @@
 # ReactRandomTodoListProject
 
-A simple todo list with react frontend and express backend for call a simple api
+A simple todo list with react frontend and express backend for call a simple api using Ng Extensible Dev Tools for Monorepos, very very cool!
 
 ## Generate an application
 
