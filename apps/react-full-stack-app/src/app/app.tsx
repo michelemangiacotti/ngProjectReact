@@ -1,25 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Message } from '@react-project/api-interfaces';
+import { Todo } from '@react-project/data';
+import { Todos } from '@react-project/ui';
 
-export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
+
+const App = () => {
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
-    fetch('/api')
-      .then(r => r.json())
-      .then(setMessage);
+    fetch('/api/todos')
+      .then(_ => _.json())
+      .then(setTodos);
   }, []);
+
+  function addTodo() {
+    fetch('/api/addTodo', {
+      method: 'POST',
+      body: ''
+    })
+      .then(_ => _.json())
+      .then(newTodo => {
+        setTodos([...todos, newTodo]);
+      });
+  }
 
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to react-full-stack-app!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-        />
-      </div>
-      <div>{m.message}</div>
+      <h1>Todos</h1>
+      <Todos todos={todos} />
+      <button id={'add-todo'} onClick={addTodo}>
+        Add Todo
+      </button>
     </>
   );
 };
