@@ -2,6 +2,13 @@
 
 A simple todo list with react frontend and express backend for call a simple api using Ng Extensible Dev Tools for Monorepos, very very cool!
 
+In this simple project:
+
+-Built a full stack application using React and Express
+-Shared code between the frontend and the backend
+-Created a UI library
+-Used Nx dep graph capabilities to only retest and rebuild what is affected
+
 ## Generate an application
 
 Run `nx g @nrwl/react:app my-app` to generate an application.
